@@ -7,10 +7,10 @@ import type {
 import { LinkPreset } from './types/config'
 
 export const siteConfig: SiteConfig = {
-  title: 'Fuwari',
-  subtitle: 'Demo Site',
+  title: "AbdooOwd's Portfolio",
+  subtitle: 'Le Portfolio Le oui oui',
   lang: 'en',
-  themeHue: 250,
+  themeHue: 155,
   banner: {
     enable: false,
     src: 'assets/images/demo-banner.png',
@@ -24,16 +24,16 @@ export const navBarConfig: NavBarConfig = {
     LinkPreset.About,
     {
       name: 'GitHub',
-      url: 'https://github.com/saicaca/fuwari',
+      url: 'https://github.com/AbdooOwd',
       external: true,
     },
   ],
 }
 
 export const profileConfig: ProfileConfig = {
-  avatar: 'assets/images/demo-avatar.png',
-  name: 'Lorem Ipsum',
-  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  avatar: 'assets/images/idiot.png',
+  name: 'AbdooOwd',
+  bio: 'A guy who loves tech.',
   links: [
     {
       name: 'Twitter',
@@ -48,7 +48,7 @@ export const profileConfig: ProfileConfig = {
     {
       name: 'GitHub',
       icon: 'fa6-brands:github',
-      url: 'https://github.com/saicaca/fuwari',
+      url: 'https://github.com/AbdooOwd',
     },
   ],
 }
