@@ -8,7 +8,7 @@
   // Add more properties as needed
 }*/
 
-export async function fetchData(apiUrl: string) {
+export default async function fetchData(apiUrl: string) {
   try {
     const response = await fetch(apiUrl)
 

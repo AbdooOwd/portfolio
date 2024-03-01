@@ -13,6 +13,7 @@ const { Content } = await boycottPost.render();
 
 <script>
     import fetchData from "../../utils/abdoo/getAPI";
+    import { set_p_text } from "../../utils/abdoo/funcs";
 
     const leButton = document.getElementById("reload-api") as HTMLAnchorElement;
     const api_content = document.getElementById(
@@ -20,20 +21,22 @@ const { Content } = await boycottPost.render();
     ) as HTMLDivElement;
 
     function update_data() {
-        const leData = fetchData("api.notoisrael.net/api/brand/get/1")
+        api_content.style.display = "block";
+        set_p_text(api_content, "Accessing API...");
+        const leData = fetchData("api.notoisrael.net/api/brand/getall")
             .then((data: any) => {
                 console.log("API Response:", data);
+                set_p_text(api_content, "Accessed API Successfully!");
             })
             .catch((error: any) => {
                 // Handle errors
                 console.error("Error:", error);
+                //api_content.innerHTML = "<br/>Failed to access API";
+                set_p_text(api_content, "Failed to access API");
             });
     }
 
-    leButton.addEventListener("click", function () {
-        api_content.style.display = "block";
-        api_content.innerHTML = "<br/>Panda";
-    });
+    leButton.addEventListener("click", update_data);
 </script>
 
 <MainGridLayout title={i18n(I18nKey.boycott)}>
