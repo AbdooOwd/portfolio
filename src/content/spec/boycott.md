@@ -7,5 +7,5 @@ So this is why there's a boycott list; a list of companies that support
 this genocide by providing all kind of helps to Israel, but not to Gaza
 or the West Bank.
 
-This Boycott list is provided by this [API](https://dev.notoisrael.net/)
-is provided by [NoToIsrael.net](https://notoisrael.net/)
+This Boycott list is powered by this [API](https://dev.notoisrael.net/)
+provided by [NoToIsrael.net](https://notoisrael.net/)

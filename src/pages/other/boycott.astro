@@ -14,13 +14,21 @@ const { Content } = await boycottPost.render();
 <script>
     import fetchData from "../../utils/abdoo/getAPI";
 
-    const leButton = document.getElementById("reload-api");
-    const api_content = document.getElementById("api-content");
+    const leButton = document.getElementById("reload-api") as HTMLAnchorElement;
+    const api_content = document.getElementById(
+        "api-content",
+    ) as HTMLDivElement;
 
-    function update_data() {
+    async function update_data() {
         const leData = fetchData("api.notoisrael.net/api/brand/getall");
-        api_content?.innerHTML = "DONE";
+        api_content.innerHTML = "DONE";
+        api_content.innerHTML = "Hi";
     }
+
+    leButton.addEventListener("click", function () {
+        api_content.style.display = "block";
+        api_content.innerHTML = "<br/>Panda";
+    });
 </script>
 
 <MainGridLayout title={i18n(I18nKey.boycott)}>
@@ -37,12 +45,11 @@ const { Content } = await boycottPost.render();
                 aria-label="Reload Boycott API"
                 class="btn-plain h-11 font-bold px-5 rounded-lg active:scale-95"
                 style="cursor: pointer;"
-                onclick="update_data()"
+                id="reload-api"
             >
                 <div class="flex items-center">Reload API</div>
             </a>
-            <br />
-            <p id="api-content"></p>
+            <div id="api-content" style="display: none;" class="text-90"></div>
         </div>
     </div>
 </MainGridLayout>

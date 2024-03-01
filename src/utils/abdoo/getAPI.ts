@@ -1,4 +1,4 @@
-export interface ApiResponse {
+interface ApiResponse {
   // Define the structure of the API response if known
   // For example, you can create interfaces for different API responses
   userId: number
@@ -8,7 +8,7 @@ export interface ApiResponse {
   // Add more properties as needed
 }
 
-export async function fetchData(apiUrl: string): Promise<ApiResponse> {
+async function fetchData(apiUrl: string): Promise<ApiResponse> {
   try {
     const response = await fetch(apiUrl)
 

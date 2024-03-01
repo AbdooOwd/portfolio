@@ -15,5 +15,15 @@ LOVE devlogs *(btw, devlogs are like vlogs, but for coding)*.
 Consider this like, uhhh, a git repository with commits?
 > *Date format in DD/MM/YYYY*
 
-## Added profile picture [01/03/2024]
-I added that cool dope looking pixel profile picture
+## Integrating Boycott API [01/03/2024]
+So with what's happening in Gaza, I got the idea of 
+implementing a page for [Israel's Boycott list](/other/boycott).
+* [X] **Step 1**: Get the API's data, it was a bit easy, because you only have to use
+the `fetch` function to get the data.
+* [X] **Step 2**: Make the **"Reload API"** actually get the API's data and display it.
+    * This by using `addEventListener` then using the `click` event, attach it to a function 
+    *(anonymous function of course)*, in this function we change the `<p>` element's style
+    parameter `display` to `block`. Technically, we're just saying: "Hey! Show me that paragraph!"
+    *(I think a `div` would be better)*.
+
+And DONE! It's ugly, but it works! A bit... With no error handling... And didn't even try it.......
