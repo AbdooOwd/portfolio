@@ -3,6 +3,8 @@ enum I18nKey {
   about = 'about',
   archive = 'archive',
 
+  boycott = 'boycott',
+
   tags = 'tags',
   categories = 'categories',
   recentPosts = 'recentPosts',
