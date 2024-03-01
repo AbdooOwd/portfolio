@@ -19,10 +19,15 @@ const { Content } = await boycottPost.render();
         "api-content",
     ) as HTMLDivElement;
 
-    async function update_data() {
-        const leData = fetchData("api.notoisrael.net/api/brand/getall");
-        api_content.innerHTML = "DONE";
-        api_content.innerHTML = "Hi";
+    function update_data() {
+        const leData = fetchData("api.notoisrael.net/api/brand/get/1")
+            .then((data: any) => {
+                console.log("API Response:", data);
+            })
+            .catch((error: any) => {
+                // Handle errors
+                console.error("Error:", error);
+            });
     }
 
     leButton.addEventListener("click", function () {

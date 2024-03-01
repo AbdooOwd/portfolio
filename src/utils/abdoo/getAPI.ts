@@ -1,4 +1,4 @@
-interface ApiResponse {
+/*interface ApiResponse {
   // Define the structure of the API response if known
   // For example, you can create interfaces for different API responses
   userId: number
@@ -6,9 +6,9 @@ interface ApiResponse {
   title: string
   body: string
   // Add more properties as needed
-}
+}*/
 
-async function fetchData(apiUrl: string): Promise<ApiResponse> {
+export async function fetchData(apiUrl: string) {
   try {
     const response = await fetch(apiUrl)
 
@@ -16,7 +16,7 @@ async function fetchData(apiUrl: string): Promise<ApiResponse> {
       throw new Error(`HTTP error! Status: ${response.status}`)
     }
 
-    const data: ApiResponse = await response.json()
+    const data/*: ApiResponse*/ = await response.json()
     return data
   } catch (error) {
     // Handle errors or rethrow for the calling code to handle
