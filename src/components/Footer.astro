@@ -1,13 +1,23 @@
 ---
+import { profileConfig } from "../config";
+import { funny_footer_text } from "@utils/abdoo/fun";
+import { ran_int } from "@utils/abdoo/funcs";
 
-import {profileConfig} from "../config";
-
+const random_txt = funny_footer_text[ran_int(0, funny_footer_text.length)];
 ---
 
-<div class="card-base max-w-[var(--page-width)] min-h-[4.5rem] rounded-b-none mx-auto flex items-center px-6">
+<div
+    class="card-base max-w-[var(--page-width)] min-h-[4.5rem] rounded-b-none mx-auto flex items-center px-6"
+>
     <div class="text-50 text-sm">
-        © 2024 {profileConfig.name}. All Rights Reserved - Free Palestine
-        <br>
-        Powered by <a class="link text-[var(--primary)]" target="_blank" href="https://github.com/saicaca/fuwari">Fuwari</a>
+        © 2024 {profileConfig.name}. All Rights Reserved - Free Palestine - {
+            random_txt
+        }
+        <br />
+        Powered by <a
+            class="link text-[var(--primary)]"
+            target="_blank"
+            href="https://github.com/saicaca/fuwari">Fuwari</a
+        >
     </div>
 </div>
