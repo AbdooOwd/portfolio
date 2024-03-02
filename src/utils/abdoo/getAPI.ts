@@ -1,26 +1,40 @@
-/*interface ApiResponse {
-  // Define the structure of the API response if known
-  // For example, you can create interfaces for different API responses
-  userId: number
-  id: number
-  title: string
-  body: string
-  // Add more properties as needed
-}*/
 
-export default async function fetchData(apiUrl: string) {
-  try {
-    const response = await fetch(apiUrl)
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`)
-    }
+/* This is how notoisrael.net's api looks like:
+{
+		  "success": true,
+		  "data": {
+			  "id": "the id",
+			  "brandName": "the brand name",
+			  "brandImage": "image of brand",
+			  "proofLink": "the proof link"
+		  }
+		}
+*/
 
-    const data/*: ApiResponse*/ = await response.json()
-    return data
-  } catch (error) {
-    // Handle errors or rethrow for the calling code to handle
-    console.error('Error fetching data:', error)
-    throw error
-  }
+interface BoycottList {
+	success: boolean
+	data?: {
+		id: number
+		brandName: string
+		brandImage: string
+		proofLink: string
+	}
+}
+
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+export async function fetchData(apiUrl: string): Promise<any> {
+	try {
+		const response = await fetch(apiUrl);
+
+		if (!response.ok) {
+			throw new Error(`HTTP error! Status: ${response.status}`);
+		}
+
+		const data = await response.json();
+		return data;
+	} catch (error) {
+		console.error('Error fetching data:', error);
+		throw error;
+	}
 }

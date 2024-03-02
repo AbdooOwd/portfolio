@@ -12,26 +12,31 @@ const { Content } = await boycottPost.render();
 ---
 
 <script>
-    import fetchData from "../../utils/abdoo/getAPI";
-    import { set_p_text } from "../../utils/abdoo/funcs";
+    import { fetchData } from "../../utils/abdoo/getAPI";
+    import { set_p_text, ran_int } from "../../utils/abdoo/funcs";
 
     const leButton = document.getElementById("reload-api") as HTMLAnchorElement;
     const api_content = document.getElementById(
         "api-content",
     ) as HTMLDivElement;
 
-    function update_data() {
+    async function update_data() {
         api_content.style.display = "block";
         set_p_text(api_content, "Accessing API...");
-        const leData = fetchData("api.notoisrael.net/api/brand/getall")
+
+        const leData = await fetchData(
+            `https://api.notoisrael.net/api/brand/get/${ran_int(0, 100)}`,
+        )
             .then((data: any) => {
-                console.log("API Response:", data);
+                //console.log("API Response:", data);
+                api_content.style.color = "green";
                 set_p_text(api_content, "Accessed API Successfully!");
+                console.log(data);
+                set_p_text(api_content, JSON.stringify(data));
             })
             .catch((error: any) => {
-                // Handle errors
-                console.error("Error:", error);
-                //api_content.innerHTML = "<br/>Failed to access API";
+                //console.error("Error:", error);
+                api_content.style.color = "red";
                 set_p_text(api_content, "Failed to access API");
             });
     }
