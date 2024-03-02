@@ -12,8 +12,13 @@ const { Content } = await boycottPost.render();
 ---
 
 <script>
-    import { fetchData } from "../../utils/abdoo/getAPI";
+    import {
+        fetchData,
+        get_example_data,
+        type BoycottList,
+    } from "../../utils/abdoo/getAPI";
     import { set_p_text, ran_int } from "../../utils/abdoo/funcs";
+    import { defineCollection } from "astro:content";
 
     const leButton = document.getElementById("reload-api") as HTMLAnchorElement;
     const api_content = document.getElementById(
@@ -25,23 +30,35 @@ const { Content } = await boycottPost.render();
         set_p_text(api_content, "Accessing API...");
 
         const leData = await fetchData(
-            `https://api.notoisrael.net/api/brand/get/${ran_int(0, 100)}`,
+            `https://api.notoisrael.net/api/brand/get/${ran_int(0, 70)}`,
         )
-            .then((data: any) => {
-                //console.log("API Response:", data);
+            .then((data: BoycottList) => {
+                // console.log("API Response:", data);
                 api_content.style.color = "green";
                 set_p_text(api_content, "Accessed API Successfully!");
                 console.log(data);
                 set_p_text(api_content, JSON.stringify(data));
             })
             .catch((error: any) => {
-                //console.error("Error:", error);
+                // console.error("Error:", error);
                 api_content.style.color = "red";
-                set_p_text(api_content, "Failed to access API");
+                set_p_text(
+                    api_content,
+                    `Failed to access API<br/>Putting example instead...`,
+                );
+
+                generate_boycott_card(get_example_data());
             });
     }
 
-    leButton.addEventListener("click", update_data);
+    function generate_boycott_card(data: BoycottList): void {
+        api_content.innerHTML += `
+        <br/><h1 style="font-size: 39px; font-weight: bolder;">${data.data?.brandName}</h1>
+        <a href=${data.data?.proofLink} target="_blank" style="text-decoration:underline;">Proof link</a>
+        `;
+    }
+
+    leButton?.addEventListener("click", update_data);
 </script>
 
 <MainGridLayout title={i18n(I18nKey.boycott)}>

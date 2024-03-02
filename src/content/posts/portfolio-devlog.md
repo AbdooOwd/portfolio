@@ -16,7 +16,7 @@ Consider this like, uhhh, a git repository with commits?
 > *Date format in DD/MM/YYYY*
 
 ## Integrating Boycott API [01/03/2024]
-So with what's happening in Gaza, I got the idea of 
+* So with what's happening in Gaza, I got the idea of 
 implementing a page for [Israel's Boycott list](/other/boycott).
 * [X] **Step 1**: Get the API's data. It was a bit easy, because you only have to use
 the `fetch` function to get the data.
@@ -28,12 +28,14 @@ the `fetch` function to get the data.
 * And DONE! It's ugly, but it works! A bit... With no error handling... And didn't even try it...
 
 * Update! Now the thing works. Instead of using a `<p>` I use a `<div>`. 
-And now, if you press that reload button, then it prints a little message
+And now, if you press that reload button, it prints a little message
 that tells you the state of the "API fetching", and if it's good, it prints the collected data,
 if there was a problem, then it would write that it failed, and guess what! If it fails....
 It becomes red. That's it.
     * Btw all of this took me until now like 2 hours maybe. I should be studying right now.
 
 ## Finishing Boycott API [02/03/2024]
-Uhhh, guess what. The API wasn't working cuz I didn't add that `https://` at the benningin...
+* Uhhh, guess what. The API wasn't working cuz I didn't add that `https://` at the benningin...
 But at least now it works! Left me to show the actual content (title, image... etc).
+* So, now I finished a little "prototype" you might say, and if the API checking fails,
+then the site provides an example and NOT as plain JSON.
