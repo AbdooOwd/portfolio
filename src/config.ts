@@ -33,12 +33,12 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
   avatar: 'assets/images/pixelAbdoo.png',
   name: 'AbdooOwd',
-  bio: 'A guy who loves tech.',
+  bio: 'Algerian guy who loves tech/CS and science.',
   links: [
     {
       name: 'Twitter',
       icon: 'fa6-brands:twitter',
-      url: 'https://twitter.com',
+      url: 'https://twitter.com/AbdooOwd',
     },
     {
       name: 'Steam',
