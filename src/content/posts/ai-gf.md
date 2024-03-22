@@ -30,3 +30,8 @@ So I wanted to do something that looked like ChatGPT, so I took a grey backgroun
 ChatGPT for some help. And it was easily done! This is one the best projects I ever made, and yet one of the easiest!
 
 # What did you learn?
+How to use AI, and how to do awesome stuff. I also learned a LOT about web development.
+
+# UPDATE: Gemini API [22/3/2024]
+I was using that **Replicate API** because I thought that it was limitless. Turned out they just gave me a free time 
+that I had exceeded yesterday. So I migrated to **Google's Gemini API**.
